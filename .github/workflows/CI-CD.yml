@@ -13,12 +13,12 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - name: Publish extension to Open VSX
-        uses: HaaLeo/publish-open-vsx-github-action@master
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
       - name: Publish extension to Visual Studio Marketplace
         uses: HaaLeo/publish-open-vsx-github-action@master
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
+      - name: Publish extension to Open VSX
+        uses: HaaLeo/publish-open-vsx-github-action@master
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
