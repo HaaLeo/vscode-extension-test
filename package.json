@@ -2,7 +2,7 @@
 	"name": "vscode-extension-test",
 	"displayName": "vscode-extension-test",
 	"description": "Test For Github Actions",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "HaaLeo",
 	"engines": {
 		"vscode": "^1.46.0"
