@@ -14,11 +14,14 @@ jobs:
           node-version: 12
       - run: npm ci
       - name: Publish extension to Visual Studio Marketplace
-        uses: HaaLeo/publish-open-vsx-github-action@master
+        uses: HaaLeo/publish-vscode-extension@master
+        id: publishVSMarketplace
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
       - name: Publish extension to Open VSX
-        uses: HaaLeo/publish-open-vsx-github-action@master
+        uses: HaaLeo/publish-vscode-extension@master
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          extensionFile: ${{ steps.publishVSMarketplace.outputs.vsixPath }}
+          packagePath: ''
